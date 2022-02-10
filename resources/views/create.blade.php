@@ -1,6 +1,6 @@
 <h1>Crear nueva publicacion</h1>
 <form method="post" action="{{ route('publicaciones.store') }}">
-    @csrf
+        @csrf
     @if ($errors->any())
         @foreach ($errors->all() as $error)
             <li> {{ $error }}</li>
@@ -11,10 +11,10 @@
         <input type="text" name="titulo" value="{{ old('titulo') }}"><br>
     </label>
     <label>
-        <input type="checkbox" name="caducable" checked={{ old('caducable') }} /> <label>Caducable</label> <br>
+        <input type="checkbox" name="caducable" checked={{ old('caducable') == true }} /> <label>Caducable</label> <br>
     </label>
     <label>
-        <input type="checkbox" name="comentable" checked={{ old('comentable') }} /> <label>Comentable</label> <br>
+        <input type="checkbox" name="comentable" checked={{ old('comentable')==true }} /> <label>Comentable</label> <br>
     </label>
     <label>
         Extracto
