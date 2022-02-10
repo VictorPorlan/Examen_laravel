@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('publicaciones', 'App\Http\Controllers\Publicaciones')->middleware('auth');
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
