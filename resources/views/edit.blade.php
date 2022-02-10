@@ -8,7 +8,7 @@
         @endforeach
     @endif
     <label>
-        Titulo
+        {{ __("Titulo") }}
         <input type="text" name="titulo" value="{{ old('titulo', $post->titulo) }}"><br>
     </label>
     <label>
