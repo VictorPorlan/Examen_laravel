@@ -6,6 +6,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests\PublicacionesRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class Publicaciones extends Controller
 {
@@ -78,11 +79,13 @@ class Publicaciones extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(PublicacionesRequest $request, $id, Publicacion $post)
     {
+        if (! Gate::allows('update-post', $post)) {
         $post = Publicacion::findOrFail($id);
         $post->update($request->all());
         return redirect()->route('publicaciones.show', $post->id);    
+        }
     }
 
     public function destroy($id)
