@@ -8,21 +8,24 @@
         @endforeach
     @endif
     <label>
-        {{ __("Titulo") }}
+        {{ __('title') }}
         <input type="text" name="titulo" value="{{ old('titulo', $post->titulo) }}"><br>
     </label>
     <label>
-        <input type="checkbox" name="caducable" checked={{ old('caducable', $post->caducable) == true }} /> <label>Caducable</label> <br>
+
+        <input type="checkbox" name="caducable" checked={{ old('caducable', $post->caducable) == true }} />
+        <label>Caducable</label> <br>
     </label>
     <label>
-        <input type="checkbox" name="comentable" checked={{ old('comentable',$post->comentable) == true }} /> <label>Comentable</label> <br>
+        <input type="checkbox" name="comentable" checked={{ old('comentable', $post->comentable) == true }} />
+        <label>Comentable</label> <br>
     </label>
     <label>
-        Extracto
-        <input type="text" name="extracto" value="{{ old('extracto',$post->extracto) }}" /><br>
+        {{ __('extract') }}
+        <input type="text" name="extracto" value="{{ old('extracto', $post->extracto) }}" /><br>
     </label>
     <label>
-        Contenido
+        {{ __('content') }}
         <textarea name="contenido" value="{{ old('contenido', $post->contendio) }}"></textarea><br>
     </label>
     <label>

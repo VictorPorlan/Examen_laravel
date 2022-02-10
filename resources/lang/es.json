@@ -1,10 +1,9 @@
 {
     "extract": "Extracto",
-    "Titulo": "Titulo",
-    "contenido": "contenido",
+    "title": "Titulo",
+    "content": "contenido",
     "caducable": "Caducable",
     "acceso": "Caducable",
-
     "30 Days": "30 Días",
     "60 Days": "60 Días",
     "90 Days": "90 Días",
