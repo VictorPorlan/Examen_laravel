@@ -73,29 +73,21 @@ class Publicaciones extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Publicacion::findOrFail($id);
+        return view('edit', compact('post'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        //
+        $post = Publicacion::findOrFail($id);
+        $post->update($request->all());
+        return redirect()->route('publicaciones.show', $post->id);    
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        Publicacion::destroy($id);
+        return redirect('publicaciones');    
     }
 }
